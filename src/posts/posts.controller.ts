@@ -37,7 +37,9 @@ export class PostsController {
     description: '특정 과목에 해당하는 게시글 작성',
   })
   @ApiResponse({ status: 200, type: PostDto })
-  create(@Body() createPostDto: PostInputDto): PostDto {
+  create(
+    @Param('courseId') courseId: string,
+    @Body() createPostDto: PostInputDto): PostDto {
     return this.postsService.create(createPostDto);
   }
 
@@ -49,6 +51,7 @@ export class PostsController {
   @ApiBody({ type: PostInputDto }) // 👈 요청 바디 표시
   @ApiResponse({ status: 200, type: PostDto })
   update(
+    @Param('courseId') courseId: string,
     @Param('postId') postId: string,
     @Body() updatePostDto: PostInputDto,
   ): PostDto {
@@ -60,7 +63,9 @@ export class PostsController {
     summary: '게시글 삭제',
     description: '특정 과목에 해당하는 게시글 삭제',
   })
-  remove(@Param('postId') postId: string): void {
+  remove(
+    @Param('courseId') courseId: string,
+    @Param('postId') postId: string): void {
     this.postsService.remove(postId);
   }
 
@@ -74,7 +79,9 @@ export class PostsController {
     description: '좋아요 성공/취소',
   })
   @ApiResponse({ status: 200, type: PostDto })
-  likePost(@Param('postId') postId: string): PostDto {
+  likePost(
+    @Param('courseId') courseId: string,
+    @Param('postId') postId: string): PostDto {
     return this.postsService.likePost(postId);
   }
 }

@@ -54,8 +54,8 @@ export class PostCommentsController {
 
   @Post(':commentId/like')
   @ApiOperation({
-    summary: '게시글 좋아요',
-    description: '특정 게시글에 좋아요를 누릅니다.',
+    summary: '댓글 좋아요',
+    description: '특정 댓글에 좋아요를 누릅니다.',
   })
   @ApiResponse({
     status: 200,
