@@ -17,7 +17,7 @@ export class UserDto {
     description: '학번',
     example: '20253309',
   })
-  public login_id!: number;
+  public loginId!: number;
 
   @ApiProperty({
     description: '이메일',

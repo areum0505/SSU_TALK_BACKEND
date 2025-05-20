@@ -10,7 +10,6 @@ async function bootstrap() {
     .setTitle('SSU-Talk API')
     .setDescription('SSU-Talk 백엔드 API 문서입니다.')
     .setVersion('1.0')
-    .addTag('posts') // 태그는 선택
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
